@@ -1,4 +1,5 @@
 # General
+**/.env
 .env
 *.log
 *.sqlite3
