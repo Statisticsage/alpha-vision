@@ -1,0 +1,10 @@
+[build]
+  # Run the following command to install Python dependencies.
+  command = "pip install --no-cache-dir -r requirements.txt"
+  # Set the working directory to the backend folder so that Railway uses that as the project root.
+  root = "backend"
+
+[deploy]
+  # Start command to launch your FastAPI app using Uvicorn.
+  # Ensure that your main file is at backend/app/main.py and the app object is called `app`.
+  command = "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
