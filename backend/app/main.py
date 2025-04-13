@@ -39,7 +39,6 @@ app.add_middleware(
 # 📁 Static files
 app.mount("/prediction_results", StaticFiles(directory="prediction_results"), name="prediction_results")
 app.mount("/analysis_results", StaticFiles(directory="analysis_results"), name="analysis_results")
-app.mount("/", StaticFiles(directory="frontend/dist", html=True), name="frontend")
 # 🧱 Create DB tables
 Base.metadata.create_all(bind=engine)
 
