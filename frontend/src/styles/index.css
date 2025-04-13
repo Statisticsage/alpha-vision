@@ -1,0 +1,323 @@
+/* 🌎 Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+  transition: background 0.3s ease;
+}
+
+/* 🏠 Home Container */
+.landing-home-container {
+  display: flex;
+  height: 100vh;
+  transition: all 0.3s ease-in-out;
+  background: #f5f5f5;
+  color: #333;
+}
+
+/* 🌙 Dark Mode */
+.landing-home-container.landing-dark-mode {
+  background: #0a0a0a;
+  color: #e0e0e0;
+}
+
+/* 📜 Sidebar Navigation */
+.landing-home-container .landing-sidebar {
+  width: 260px;
+  background: rgba(240, 240, 240, 0.9);
+  backdrop-filter: blur(10px);
+  color: #333;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.landing-home-container.landing-dark-mode .landing-sidebar {
+  background: rgba(25, 25, 25, 0.9);
+  color: white;
+}
+
+.landing-home-container .landing-sidebar h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #0077cc;
+}
+
+.landing-home-container.landing-dark-mode .landing-sidebar h2 {
+  color: #00c8ff;
+}
+
+.landing-home-container .landing-sidebar ul {
+  list-style: none;
+}
+
+.landing-home-container .landing-sidebar ul li {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.landing-home-container .landing-sidebar ul li:hover {
+  background: #0077cc;
+  color: white;
+  transform: scale(1.05);
+}
+
+.landing-home-container.landing-dark-mode .landing-sidebar ul li:hover {
+  background: #00c8ff;
+  color: black;
+}
+
+/* 🌙 Dark Mode Toggle */
+.landing-home-container .landing-dark-mode-toggle {
+  font-size: 1.5em;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+  color: #333;
+}
+
+.landing-home-container.landing-dark-mode .landing-dark-mode-toggle {
+  color: #e0e0e0;
+}
+
+.landing-home-container .landing-dark-mode-toggle:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.landing-home-container.landing-dark-mode .landing-dark-mode-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* 📊 Main Content */
+.landing-home-container .landing-main-content {
+  flex: 1;
+  display: flex;
+  padding: 40px;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* 🖼 Left Section */
+.landing-home-container .landing-left-section {
+  flex: 1;
+  text-align: center;
+}
+
+.landing-home-container .landing-left-section h1 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.landing-home-container .landing-left-section p {
+  font-size: 18px;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.landing-home-container .landing-background-video {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* 📂 Right Section - Upload */
+.landing-home-container .landing-right-section {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 400px;
+}
+
+.landing-home-container.landing-dark-mode .landing-right-section {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.15);
+}
+
+.landing-home-container .landing-right-section h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* 📂 Task Dropdown */
+.landing-home-container .landing-task-dropdown {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+
+/* 📂 File Input */
+.landing-home-container .landing-file-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px dashed #0077cc;
+  background: rgba(0, 119, 204, 0.1);
+  text-align: center;
+  cursor: pointer;
+}
+
+.landing-home-container.landing-dark-mode .landing-file-input {
+  border: 1px dashed #00c8ff;
+  background: rgba(0, 200, 255, 0.1);
+}
+
+.landing-home-container .landing-file-input:hover {
+  border-color: #005599;
+}
+
+.landing-home-container.landing-dark-mode .landing-file-input:hover {
+  border-color: #0099cc;
+}
+
+/* 📥 Upload Button */
+.landing-home-container .landing-upload-btn {
+  width: 100%;
+  padding: 12px;
+  background: #0077cc;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+}
+
+.landing-home-container.landing-dark-mode .landing-upload-btn {
+  background: #00c8ff;
+}
+
+.landing-home-container .landing-upload-btn:hover {
+  background: #005599;
+  transform: scale(1.05);
+}
+
+.landing-home-container.landing-dark-mode .landing-upload-btn:hover {
+  background: #0099cc;
+}
+
+/* 🔄 Loading Spinner */
+.landing-home-container .landing-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 📩 Message Box */
+.landing-home-container .landing-message-box {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.landing-home-container .landing-message-box.success {
+  background: rgba(0, 255, 0, 0.1);
+  color: green;
+}
+
+.landing-home-container .landing-message-box.error {
+  background: rgba(255, 0, 0, 0.1);
+  color: red;
+}
+
+/* 🔒 Logout Confirmation */
+.landing-home-container .landing-logout-confirmation {
+  background: rgba(255, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  margin-top: 10px;
+  position: absolute; /* Ensure it stays within the sidebar */
+  bottom: 20px; /* Position it above the bottom */
+  left: 20px; /* Center it horizontally */
+  right: 20px; /* Center it horizontally */
+}
+
+.landing-home-container .landing-logout-confirmation button {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.landing-home-container .landing-logout-confirmation button:first-child {
+  background: red;
+  color: white;
+}
+
+.landing-home-container .landing-logout-confirmation button:last-child {
+  background: gray;
+  color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .landing-home-container {
+      flex-direction: column;
+  }
+
+  .landing-main-content {
+      padding: 20px;
+      gap: 20px;
+  }
+
+  .landing-left-section,
+  .landing-right-section {
+      width: 100%;
+      padding: 10px;
+  }
+
+  .landing-right-section {
+      margin-top: 20px;
+  }
+
+  .landing-upload-btn {
+      font-size: 16px;
+  }
+}
