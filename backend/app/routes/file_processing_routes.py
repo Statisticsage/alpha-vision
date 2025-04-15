@@ -1,7 +1,6 @@
 import logging
 import os
 import pandas as pd
-import cchardet
 import asyncio
 import httpx
 import aiofiles
