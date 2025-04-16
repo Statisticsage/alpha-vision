@@ -14,6 +14,12 @@ from app.models.uploaded_file import UploadedFile
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Fallback import for encoding detection:
+try:
+    import cchardet as chardet_detector
+except ImportError:
+    import chardet as chardet_detector
+
 # Constants
 UPLOAD_DIR = "uploaded_files"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
@@ -29,10 +35,10 @@ router = APIRouter()
 def read_file_into_dataframe(file_path: str, filename: str):
     try:
         if filename.endswith(".csv"):
-            # ✅ Detect encoding
+            # ✅ Detect encoding using the available library (cchardet if installed, otherwise chardet)
             with open(file_path, "rb") as f:
                 raw_data = f.read()
-                encoding_info = cchardet.detect(raw_data)
+                encoding_info = chardet_detector.detect(raw_data)
                 detected_encoding = encoding_info.get("encoding", "utf-8")
                 confidence = encoding_info.get("confidence", 0)
 
@@ -55,6 +61,7 @@ def read_file_into_dataframe(file_path: str, filename: str):
     except Exception as e:
         logger.error(f"❌ Error reading file {filename}: {str(e)}")
         raise HTTPException(status_code=400, detail=f"Error reading file: {str(e)}")
+
 # 💾 Save file info to database
 def save_file_to_db(filename: str, filepath: str, task: str, db: Session):
     db_file = UploadedFile(filename=filename, filepath=filepath, task=task)
